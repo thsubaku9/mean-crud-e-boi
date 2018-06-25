@@ -17,11 +17,7 @@ export class EmployeeComponent implements OnInit {
 
   constructor(private employeeService: EmployeeService) { }
 
-  ngOnInit() {
-    this.refreshEmployeeList();
-    this.resetForm();
-   
-  }
+  
 
   resetForm(form?: NgForm)
   {if(form){form.reset();
@@ -33,7 +29,18 @@ export class EmployeeComponent implements OnInit {
     salary:null,
     office:""
   }
-  }}
+  }
+  else
+  {
+  this.employeeService.selectedEmployee={
+    _id:"",
+    name:"",
+    position:"",
+    contact:null,
+    salary:null,
+    office:""}
+  }
+}
 
   onSubmit(form: NgForm)
   {if(form.value._id=="")
@@ -80,5 +87,10 @@ export class EmployeeComponent implements OnInit {
       M.toast({html:'Deleted successfully',classes:"rounded"});
     });
   
+  }
+
+  ngOnInit() {
+    this.resetForm();
+    this.refreshEmployeeList();       
   }
 }
