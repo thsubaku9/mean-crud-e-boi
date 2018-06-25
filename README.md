@@ -8,7 +8,7 @@ Get your fresh hot stack components from here ->
 - https://www.mongodb.com/download-center?jmp=nav#community
 
 # Initilizaion steps
-- Angular component
+- Angular requirements
   1.)ng new AngularApp
   2.)ng g c employee
   3.)ng g s serve
